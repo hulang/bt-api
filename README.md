@@ -12,6 +12,6 @@ composer require hulang/bt-api
 #### 使用说明
 
 ```php
-$bt = new System('http://127.0.0.1:8888', 'Key');
+$bt = new System('http://127.0.0.1:8888', 'Key', 'cookie保存目录设置');
 $bt->getSystemTotal();
 ```
