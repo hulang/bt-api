@@ -14,12 +14,15 @@ class Base
 
     protected $btKey;
 
+    protected $cookiePath;
+
     protected $error;
 
-    public function __construct($panel, $key)
+    public function __construct($panel, $key, $cookiePath)
     {
         $this->btPanel = $panel;
-        $this->btKey   = $key;
+        $this->btKey = $key;
+        $this->cookiePath = $key;
     }
 
     public function panel($host)
@@ -57,8 +60,12 @@ class Base
             throw new BtException(102);
         }
 
-        // 定义cookie保存位置
-        $cookieFile = './bt/' . sha1($this->btPanel) . '.cookie';
+        // 定义[cookie]保存位置
+        $cookieFile = join(DIRECTORY_SEPARATOR, [
+            $this->cookiePath,
+            'bt',
+            sha1($this->btPanel) . '.cookie'
+        ]);
         if (!file_exists($cookieFile)) {
             $fp = fopen($cookieFile, 'w+');
             fclose($fp);
