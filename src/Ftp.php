@@ -23,9 +23,9 @@ class Ftp extends Base
     /**
      * 获取FTP列表
      *
-     * @param  string  $search
-     * @param  int     $limit
-     * @param  int     $page
+     * @param string $search
+     * @param int $limit
+     * @param int $page
      *
      * @return false|mixed
      */
@@ -47,9 +47,9 @@ class Ftp extends Base
     /**
      * 修改FTP账号密码
      *
-     * @param  int     $id
-     * @param  string  $username
-     * @param  string  $password
+     * @param int $id
+     * @param string $username
+     * @param string $password
      *
      * @return false|mixed
      */
@@ -71,9 +71,9 @@ class Ftp extends Base
     /**
      * 禁用启用FTP
      *
-     * @param  int     $id
-     * @param  string  $username
-     * @param  int     $status  0禁用，1启用
+     * @param int $id
+     * @param string $username
+     * @param int $status 0禁用，1启用
      *
      * @return false|mixed
      */
@@ -95,8 +95,8 @@ class Ftp extends Base
     /**
      * 删除
      *
-     * @param  int     $id
-     * @param  string  $username
+     * @param int $id
+     * @param string $username
      *
      * @return false|mixed
      */
