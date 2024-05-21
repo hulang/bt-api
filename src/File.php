@@ -25,7 +25,7 @@ class File extends Base
      *
      * @return array|bool|mixed
      */
-    public function upload(string $uploadPath, string $localFilePath)
+    public function upload($uploadPath, $localFilePath)
     {
         file($localFilePath);
         $fileName = explode('/', $localFilePath);
