@@ -27,9 +27,9 @@ class Database extends Base
     /**
      * 列表
      *
-     * @param  string  $search
-     * @param  int     $limit
-     * @param  int     $page
+     * @param string $search
+     * @param int $limit
+     * @param int $page
      *
      * @return false|mixed
      */
@@ -125,9 +125,9 @@ class Database extends Base
     /**
      * 获取数据库备份列表
      *
-     * @param  int     $limit   分页条数
-     * @param  int     $page    页码
-     * @param  string  $search  搜索,数据库ID
+     * @param int $limit 分页条数
+     * @param int $page 页码
+     * @param string $search 搜索,数据库ID
      *
      * @return false|mixed
      */
@@ -150,7 +150,7 @@ class Database extends Base
     /**
      * 创建数据库备份
      *
-     * @param  int  $id  数据库ID
+     * @param int $id 数据库ID
      *
      * @return false|mixed
      */
@@ -166,7 +166,7 @@ class Database extends Base
     /**
      * 创建数据库备份
      *
-     * @param  int  $id  备份ID
+     * @param int $id 备份ID
      *
      * @return false|mixed
      */
@@ -182,8 +182,8 @@ class Database extends Base
     /**
      * 从备份还原数据库/导入数据库
      *
-     * @param  string  $filePath 备份文件路径
-     * @param  string  $databaseName 数据库名称
+     * @param string $filePath 备份文件路径
+     * @param string $databaseName 数据库名称
      *
      * @return array|bool|mixed
      */
