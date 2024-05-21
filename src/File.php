@@ -20,8 +20,8 @@ class File extends Base
     /**
      *
      *
-     * @param  string  $uploadPath     上传到服务器位置的路径
-     * @param  string  $localFilePath  本地文件路径
+     * @param string $uploadPath 上传到服务器位置的路径
+     * @param string $localFilePath 本地文件路径
      *
      * @return array|bool|mixed
      */
