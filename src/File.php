@@ -23,7 +23,7 @@ class File extends Base
      * @param string $uploadPath 上传到服务器位置的路径
      * @param string $localFilePath 本地文件路径
      *
-     * @return array|bool|mixed
+     * @return mixed|array|bool
      */
     public function upload($uploadPath, $localFilePath)
     {
@@ -36,7 +36,6 @@ class File extends Base
             'f_start' => 0,
             'file'    => new \CURLFile($localFilePath, '', 'blob'),
         ];
-
         try {
             return $this->httpPostCookie($this->getUrl('Upload'), $data, $localFilePath);
         } catch (Exception $e) {
