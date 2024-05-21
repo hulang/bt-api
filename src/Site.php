@@ -76,11 +76,11 @@ class Site extends Base
     /**
      * 获取网站列表
      *
-     * @param  int     $limit   分页条数
-     * @param  int     $page    页码
-     * @param  string  $search  搜索
-     * @param  string  $type    分类标识, -1: 全部分类 0: 默认分类
-     * @param  string  $order   排序规则 使用 id 降序：id desc
+     * @param int $limit 分页条数
+     * @param int $page 页码
+     * @param string $search 搜索
+     * @param string $type 分类标识,-1:全部分类 0:默认分类
+     * @param string $order 排序规则 使用 id 降序：id desc
      *
      * @return mixed
      */
@@ -131,7 +131,7 @@ class Site extends Base
     /**
      * 获取指定网站运行的PHP版本
      *
-     * @param  string  $siteName  网站名
+     * @param string $siteName  网站名
      *
      * @return mixed
      */
@@ -167,19 +167,19 @@ class Site extends Base
     /**
      * 创建网站
      *
-     * @param  string  $webName       网站主域名和域名列表 请传 JSON
-     * @param  string  $path          根目录
-     * @param  string  $ps            备注
-     * @param  string  $version       php版本
-     * @param  bool    $ftp           是否创建ftp
-     * @param  string  $ftpUsername   ftp用户名
-     * @param  string  $ftpPassword   ftp密码
-     * @param  string  $sql           是否创建数据库 MySQL
-     * @param  string  $coding        数据库字符集 utf8|utf8mb4|gbk|big5
-     * @param  string  $dataUser      数据库用户名
-     * @param  string  $dataPassword  数据库密码
-     * @param  int     $type_id       网站分类
-     * @param  string  $port          监听端口
+     * @param string $webName 网站主域名和域名列表 请传 JSON
+     * @param string $path 根目录
+     * @param string $ps 备注
+     * @param string $version php版本
+     * @param bool $ftp 是否创建ftp
+     * @param string $ftpUsername ftp用户名
+     * @param string $ftpPassword ftp密码
+     * @param string $sql 是否创建数据库 MySQL
+     * @param string $coding 数据库字符集 utf8|utf8mb4|gbk|big5
+     * @param string $dataUser 数据库用户名
+     * @param string $dataPassword 数据库密码
+     * @param int $type_id 网站分类
+     * @param string $port 监听端口
      *
      * @return mixed
      */
@@ -229,11 +229,11 @@ class Site extends Base
     /**
      * 删除网站
      *
-     * @param  int     $id        网站ID
-     * @param  string  $webname   网站名称
-     * @param  int     $ftp       删除关联FTP
-     * @param  int     $database  删除关联数据库
-     * @param  int     $path      删除网站目录
+     * @param int $id 网站ID
+     * @param string $webname 网站名称
+     * @param int $ftp 删除关联FTP
+     * @param int $database 删除关联数据库
+     * @param int $path 删除网站目录
      *
      * @return mixed
      */
@@ -254,8 +254,8 @@ class Site extends Base
     /**
      * 停用网站
      *
-     * @param  int     $id    网站ID
-     * @param  string  $name  网站名称
+     * @param int $id 网站ID
+     * @param string $name 网站名称
      *
      * @return mixed
      */
@@ -273,8 +273,8 @@ class Site extends Base
     /**
      * 启用网站
      *
-     * @param  int     $id    网站ID
-     * @param  string  $name  网站名称
+     * @param int $id 网站ID
+     * @param string $name 网站名称
      *
      * @return mixed
      */
@@ -292,8 +292,8 @@ class Site extends Base
     /**
      * 网站到期时间
      *
-     * @param  int     $id       网站ID
-     * @param  string  $expired  到期时间 永久：0000-00-00
+     * @param int $id 网站ID
+     * @param string $expired 到期时间 永久：0000-00-00
      *
      * @return mixed
      */
@@ -314,8 +314,8 @@ class Site extends Base
     /**
      * 网站备注修改
      *
-     * @param  int     $id      网站ID
-     * @param  string  $remark  备注内容
+     * @param int $id 网站ID
+     * @param string $remark 备注内容
      *
      * @return mixed
      */
@@ -336,9 +336,9 @@ class Site extends Base
     /**
      * 获取网站备份列表
      *
-     * @param  int     $limit  分页条数
-     * @param  int     $page   页码
-     * @param  string  $id     搜索,网站ID
+     * @param int $limit 分页条数
+     * @param int $page 页码
+     * @param string $id 搜索,网站ID
      *
      * @return mixed
      */
@@ -361,7 +361,7 @@ class Site extends Base
     /**
      * 创建网站备份
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -377,7 +377,7 @@ class Site extends Base
     /**
      * 创建网站备份
      *
-     * @param  int  $id  备份ID
+     * @param int $id 备份ID
      *
      * @return mixed
      */
@@ -393,7 +393,7 @@ class Site extends Base
     /**
      * 获取网站域名列表
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -409,9 +409,9 @@ class Site extends Base
     /**
      * 添加网站域名
      *
-     * @param  int     $id       网站ID
-     * @param  string  $name     网站名称
-     * @param  string  $domains  域名列表，例：www.123.com:81,多个换行符隔开，默认80端口
+     * @param int $id 网站ID
+     * @param string $name 网站名称
+     * @param string $domains 域名列表，例：www.123.com:81,多个换行符隔开，默认80端口
      *
      * @return mixed
      */
@@ -433,10 +433,10 @@ class Site extends Base
     /**
      * 删除网站域名
      *
-     * @param  int     $id      网站ID
-     * @param  string  $name    网站名称
-     * @param  string  $domain  域名
-     * @param  int     $port    域名端口
+     * @param int $id 网站ID
+     * @param string $name 网站名称
+     * @param string $domain 域名
+     * @param int $port 域名端口
      *
      * @return mixed
      */
@@ -459,7 +459,7 @@ class Site extends Base
     /**
      * 获取可选的预定义伪静态列表
      *
-     * @param  string  $siteName  网站名称
+     * @param string $siteName 网站名称
      *
      * @return mixed
      */
@@ -479,8 +479,8 @@ class Site extends Base
     /**
      * 获取可选的预定义伪静态列表
      *
-     * @param  string  $name  伪静态名称
-     * @param  bool    $site
+     * @param string $name 伪静态名称
+     * @param bool $site
      *
      * @return mixed
      */
@@ -494,9 +494,9 @@ class Site extends Base
     /**
      * 获取可选的预定义伪静态列表
      *
-     * @param  string  $name  伪静态名称
-     * @param  string  $content
-     * @param  bool    $site
+     * @param string $name 伪静态名称
+     * @param string $content
+     * @param bool $site
      *
      * @return mixed
      */
@@ -510,7 +510,7 @@ class Site extends Base
     /**
      * 获取指定网站的根目录
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -530,9 +530,9 @@ class Site extends Base
     /**
      * 设置密码访问网站
      *
-     * @param  int     $id        网站ID
-     * @param  string  $username  用户名
-     * @param  string  $password  密码
+     * @param int $id 网站ID
+     * @param string $username 用户名
+     * @param string $password 密码
      *
      * @return mixed
      */
@@ -554,7 +554,7 @@ class Site extends Base
     /**
      * 关闭密码访问网站
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -574,7 +574,7 @@ class Site extends Base
     /**
      * 获取网站日志
      *
-     * @param  string  $siteName  网站名
+     * @param string $siteName 网站名
      *
      * @return mixed
      */
@@ -616,11 +616,11 @@ class Site extends Base
     /**
      * 设置网站盗链状态及规则信息
      *
-     * @param  int     $id       网站ID
-     * @param  string  $name     网站名
-     * @param  string  $fix      URL后缀
-     * @param  string  $domains  许可域名
-     * @param  int     $status   状态
+     * @param int $id 网站ID
+     * @param string $name 网站名
+     * @param string $fix URL后缀
+     * @param string $domains 许可域名
+     * @param int $status 状态
      *
      * @return mixed
      */
@@ -644,8 +644,8 @@ class Site extends Base
     /**
      * 获取网站三项配置开关（防跨站、日志、密码访问）
      *
-     * @param  int     $id    网站ID
-     * @param  string  $path  网站运行目录
+     * @param int $id 网站ID
+     * @param string $path 网站运行目录
      *
      * @return mixed
      */
@@ -666,7 +666,7 @@ class Site extends Base
     /**
      * 开启强制HTTPS
      *
-     * @param  string  $siteName  网站域名（纯域名）
+     * @param string $siteName 网站域名(纯域名)
      *
      * @return mixed
      */
@@ -686,7 +686,7 @@ class Site extends Base
     /**
      * 关闭强制HTTPS
      *
-     * @param  string  $siteName  域名(纯域名)
+     * @param string $siteName 域名(纯域名)
      *
      * @return mixed
      */
@@ -706,10 +706,10 @@ class Site extends Base
     /**
      * 设置SSL域名证书
      *
-     * @param  int     $type      类型
-     * @param  string  $siteName  网站名
-     * @param  string  $key       证书key
-     * @param  string  $csr       证书PEM
+     * @param int $type 类型
+     * @param string $siteName 网站名
+     * @param string $key 证书key
+     * @param string $csr 证书PEM
      *
      * @return mixed
      */
@@ -751,35 +751,10 @@ class Site extends Base
     }
 
     /**
-     * @param $id
-     * @param $authTo
-     * @param $domain
-     *
-     * @return array|bool|mixed
-     */
-    //    public function applyCertApi($id, $authTo, $domain)
-    //    {
-    //        $data = [
-    //            "domains"       => [$domain],
-    //            "auth_type"     => "http",
-    //            "auth_to"       => $authTo,
-    //            "auto_wildcard" => 0,
-    //            "id"            => $id,
-    //        ];
-    ////        dump($data);
-    //        try {
-    ////            dump($this->getUrl('ApplyCertApi'));
-    //            return $this->httpPostCookie($this->getUrl('ApplyCertApi'), $data);
-    //        } catch (Exception $e) {
-    //            return $this->error($e->getMessage());
-    //        }
-    //    }
-
-    /**
      * 关闭SSL
      *
-     * @param  int     $updateOf  修改状态码
-     * @param  string  $siteName  域名(纯域名)
+     * @param int $updateOf 修改状态码
+     * @param string $siteName 域名(纯域名)
      *
      * @return mixed
      */
@@ -800,7 +775,7 @@ class Site extends Base
     /**
      * 获取SSL状态及证书信息
      *
-     * @param  string  $siteName  域名（纯域名）
+     * @param string $siteName 域名(纯域名)
      *
      * @return mixed
      */
@@ -820,7 +795,7 @@ class Site extends Base
     /**
      * 获取网站默认文件
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -840,8 +815,8 @@ class Site extends Base
     /**
      * 设置网站默认文件
      *
-     * @param  int     $id     网站ID
-     * @param  string  $index  内容
+     * @param int $id 网站ID
+     * @param string $index 内容
      *
      * @return mixed
      */
@@ -862,7 +837,7 @@ class Site extends Base
     /**
      * 获取网站流量限制信息
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -882,10 +857,10 @@ class Site extends Base
     /**
      * 设置网站流量限制信息
      *
-     * @param  int     $id          网站ID
-     * @param  string  $perserver   并发限制
-     * @param  string  $perip       单IP限制
-     * @param  string  $limit_rate  流量限制
+     * @param int $id 网站ID
+     * @param string $perserver 并发限制
+     * @param string $perip 单IP限制
+     * @param string $limit_rate 流量限制
      *
      * @return mixed
      */
@@ -908,7 +883,7 @@ class Site extends Base
     /**
      * 关闭网站流量限制
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -928,7 +903,7 @@ class Site extends Base
     /**
      * 获取网站301重定向信息
      *
-     * @param  string  $siteName  网站名
+     * @param string $siteName 网站名
      *
      * @return mixed
      */
@@ -948,10 +923,10 @@ class Site extends Base
     /**
      * 设置网站301重定向信息
      *
-     * @param  string  $siteName   网站名
-     * @param  string  $toDomain   目标Url
-     * @param  string  $srcDomain  来自Url
-     * @param  int     $type       类型
+     * @param string $siteName 网站名
+     * @param string $toDomain 目标Url
+     * @param string $srcDomain 来自Url
+     * @param int $type 类型
      *
      * @return mixed
      */
@@ -974,7 +949,7 @@ class Site extends Base
     /**
      * 获取网站反代信息及状态
      *
-     * @param  string  $siteName  网站名称
+     * @param string $siteName 网站名称
      *
      * @return mixed
      */
@@ -994,16 +969,16 @@ class Site extends Base
     /**
      * 添加网站反代信息
      *
-     * @param  int     $cache      是否缓存
-     * @param  string  $proxyname  代理名称
-     * @param  string  $cachetime  缓存时长 /小时
-     * @param  string  $proxydir   代理目录
-     * @param  string  $proxysite  反代URL
-     * @param  string  $todomain   目标域名
-     * @param  string  $advanced   高级功能：开启代理目录
-     * @param  string  $sitename   网站名
-     * @param  string  $subfilter  文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
-     * @param  int     $type       开启或关闭 0关;1开
+     * @param int $cache 是否缓存
+     * @param string $proxyname 代理名称
+     * @param string $cachetime 缓存时长 /小时
+     * @param string $proxydir 代理目录
+     * @param string $proxysite 反代URL
+     * @param string $todomain 目标域名
+     * @param string $advanced 高级功能：开启代理目录
+     * @param string $sitename 网站名
+     * @param string $subfilter 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
+     * @param int $type 开启或关闭 0关;1开
      *
      * @return mixed
      */
@@ -1042,16 +1017,16 @@ class Site extends Base
     /**
      * 添加网站反代信息
      *
-     * @param  int     $cache      是否缓存
-     * @param  string  $proxyname  代理名称
-     * @param  string  $cachetime  缓存时长 /小时
-     * @param  string  $proxydir   代理目录
-     * @param  string  $proxysite  反代URL
-     * @param  string  $todomain   目标域名
-     * @param  string  $advanced   高级功能：开启代理目录
-     * @param  string  $sitename   网站名
-     * @param  string  $subfilter  文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
-     * @param  int     $type       开启或关闭 0关;1开
+     * @param int $cache 是否缓存
+     * @param string $proxyname 代理名称
+     * @param string $cachetime 缓存时长 /小时
+     * @param string $proxydir 代理目录
+     * @param string $proxysite 反代URL
+     * @param string $todomain 目标域名
+     * @param string $advanced 高级功能：开启代理目录
+     * @param string $sitename 网站名
+     * @param string $subfilter 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
+     * @param int $type 开启或关闭 0关;1开
      *
      * @return mixed
      */
@@ -1090,7 +1065,7 @@ class Site extends Base
     /**
      * 获取网站域名绑定二级目录信息
      *
-     * @param  int  $id  网站ID
+     * @param int $id 网站ID
      *
      * @return mixed
      */
@@ -1110,9 +1085,9 @@ class Site extends Base
     /**
      * 设置网站域名绑定二级目录
      *
-     * @param  int     $id       网站ID
-     * @param  string  $domain   域名
-     * @param  string  $dirName  目录
+     * @param int $id 网站ID
+     * @param string $domain 域名
+     * @param string $dirName 目录
      *
      * @return mixed
      */
@@ -1134,7 +1109,7 @@ class Site extends Base
     /**
      * 删除网站域名绑定二级目录
      *
-     * @param  int  $id  子目录ID
+     * @param int $id 子目录ID
      *
      * @return mixed
      */
@@ -1154,8 +1129,8 @@ class Site extends Base
     /**
      * 获取网站子目录绑定伪静态信息
      *
-     * @param  int  $id
-     * @param  int  $type
+     * @param int $id
+     * @param int $type
      *
      * @return bool|mixed
      */
