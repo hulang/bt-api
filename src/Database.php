@@ -187,7 +187,7 @@ class Database extends Base
      *
      * @return array|bool|mixed
      */
-    public function inputSql(string $filePath, string $databaseName)
+    public function inputSql($filePath, $databaseName)
     {
         try {
             return $this->httpPostCookie($this->getUrl('InputSql'), [
