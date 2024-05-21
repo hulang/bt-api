@@ -35,9 +35,9 @@ class Plugin extends Base
     /**
      * 一键部署执行
      *
-     * @param  string  $sourceName
-     * @param  string  $siteName
-     * @param  string  $phpVersion
+     * @param string $sourceName
+     * @param string $siteName
+     * @param string $phpVersion
      *
      * @return bool|mixed
      */
