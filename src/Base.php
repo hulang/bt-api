@@ -9,13 +9,9 @@ use hulang\Bt\Exceptions\BtException;
 class Base
 {
     protected $config;
-
     protected $btPanel;
-
     protected $btKey;
-
     protected $cookiePath;
-
     protected $error;
 
     public function __construct($panel, $key, $cookiePath)
@@ -24,33 +20,25 @@ class Base
         $this->btKey = $key;
         $this->cookiePath = $cookiePath;
     }
-
     public function panel($host)
     {
         $this->btPanel = $host;
-
         return $this;
     }
-
     public function key($key)
     {
         $this->btKey = $key;
-
         return $this;
     }
-
     protected function error($errorMsg): bool
     {
         $this->error = $errorMsg;
-
         return false;
     }
-
     public function getError()
     {
         return $this->error;
     }
-
     public function httpPostCookie($url, $data = [], $timeout = 60)
     {
         if (!$this->btPanel) {
@@ -59,7 +47,6 @@ class Base
         if (!$this->btKey) {
             throw new BtException(102);
         }
-
         // 定义[cookie]保存位置
         $cookieFile = join(DIRECTORY_SEPARATOR, [
             $this->cookiePath,
@@ -70,7 +57,6 @@ class Base
             $fp = fopen($cookieFile, 'w+');
             fclose($fp);
         }
-
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->btPanel . $url);
         curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);
@@ -98,7 +84,6 @@ class Base
             throw new \Exception('返回内容解析失败');
         }
     }
-
     /**
      * @param $data
      *
@@ -107,13 +92,11 @@ class Base
     private function getData($data)
     {
         $time = time();
-
         return array_merge($data, [
             'request_token' => md5($time . '' . md5($this->btKey)),
             'request_time'  => $time,
         ]);
     }
-
     protected function getUrl($key)
     {
         return $this->config[$key];
