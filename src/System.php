@@ -24,7 +24,7 @@ class System extends Base
     /**
      * 获取系统基础统计
      *
-     * @return false|mixed
+     * @return mixed|false
      */
     public function getSystemTotal()
     {
@@ -38,7 +38,7 @@ class System extends Base
     /**
      * 获取磁盘分区信息
      *
-     * @return false|mixed
+     * @return mixed|false
      */
     public function getDiskInfo()
     {
@@ -52,7 +52,7 @@ class System extends Base
     /**
      * 获取实时状态信息(CPU、内存、网络、负载)
      *
-     * @return false|mixed
+     * @return mixed|false
      */
     public function getNetWork()
     {
@@ -66,7 +66,7 @@ class System extends Base
     /**
      * 检查是否有安装任务
      *
-     * @return false|mixed
+     * @return mixed|false
      */
     public function getTaskCount()
     {
@@ -80,7 +80,7 @@ class System extends Base
     /**
      * 检查面板更新
      *
-     * @return false|mixed
+     * @return mixed|false
      */
     public function checkUpdate()
     {
