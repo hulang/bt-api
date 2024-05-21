@@ -22,7 +22,7 @@ class Base
     {
         $this->btPanel = $panel;
         $this->btKey = $key;
-        $this->cookiePath = $key;
+        $this->cookiePath = $cookiePath;
     }
 
     public function panel($host)
