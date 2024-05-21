@@ -735,7 +735,7 @@ class Site extends Base
      *
      * @param $index
      *
-     * @return bool|mixed
+     * @return mixed|bool
      */
     public function renewCert($index)
     {
@@ -1132,7 +1132,7 @@ class Site extends Base
      * @param int $id
      * @param int $type
      *
-     * @return bool|mixed
+     * @return mixed|bool
      */
     public function getDirRewrite($id, $type = 0)
     {
