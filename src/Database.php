@@ -31,7 +31,7 @@ class Database extends Base
      * @param int $limit
      * @param int $page
      *
-     * @return false|mixed
+     * @return mixed|bool
      */
     public function getList($search = '', $page = 1, $limit = 20)
     {
@@ -83,7 +83,7 @@ class Database extends Base
      * @param $name
      * @param $password
      *
-     * @return false|mixed
+     * @return mixed|bool
      */
     public function setPwd($id, $name, $password)
     {
@@ -106,7 +106,7 @@ class Database extends Base
      * @param $id
      * @param $name
      *
-     * @return false|mixed
+     * @return mixed|bool
      */
     public function delete($id, $name)
     {
@@ -129,7 +129,7 @@ class Database extends Base
      * @param int $page 页码
      * @param string $search 搜索,数据库ID
      *
-     * @return false|mixed
+     * @return mixed|bool
      */
     public function getBackups($search = '', $page = 1, $limit = 5)
     {
@@ -152,7 +152,7 @@ class Database extends Base
      *
      * @param int $id 数据库ID
      *
-     * @return false|mixed
+     * @return mixed|bool
      */
     public function backupAdd($id)
     {
@@ -168,7 +168,7 @@ class Database extends Base
      *
      * @param int $id 备份ID
      *
-     * @return false|mixed
+     * @return mixed|bool
      */
     public function backupDel($id)
     {
