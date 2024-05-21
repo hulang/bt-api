@@ -47,7 +47,11 @@ class Database extends Base
             return $this->error($e->getMessage());
         }
     }
-
+    /**
+     * 添加
+     *
+     * @return mixed|bool
+     */
     public function add(
         $name,
         $username,
@@ -185,7 +189,7 @@ class Database extends Base
      * @param string $filePath 备份文件路径
      * @param string $databaseName 数据库名称
      *
-     * @return array|bool|mixed
+     * @return mixed|array|bool
      */
     public function inputSql($filePath, $databaseName)
     {
