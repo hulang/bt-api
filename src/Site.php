@@ -80,7 +80,7 @@ class Site extends Base
      * @param int $page 页码
      * @param string $search 搜索
      * @param string $type 分类标识,-1:全部分类 0:默认分类
-     * @param string $order 排序规则 使用 id 降序：id desc
+     * @param string $order 排序规则 使用 id 降序:id desc
      *
      * @return mixed
      */
@@ -135,7 +135,7 @@ class Site extends Base
      *
      * @return mixed
      */
-    public function getSitePHPVersion(string $siteName)
+    public function getSitePHPVersion($siteName)
     {
         try {
             return $this->httpPostCookie($this->getUrl('GetSitePHPVersion'), ['siteName' => $siteName]);
@@ -411,7 +411,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      * @param string $name 网站名称
-     * @param string $domains 域名列表，例：www.123.com:81,多个换行符隔开，默认80端口
+     * @param string $domains 域名列表，例:www.123.com:81,多个换行符隔开，默认80端口
      *
      * @return mixed
      */
@@ -500,7 +500,7 @@ class Site extends Base
      *
      * @return mixed
      */
-    public function setRewrite(string $name, string $content, $site = false)
+    public function setRewrite($name, $content, $site = false)
     {
         $dir = $site ? 'vhost/rewrite' : 'rewrite/nginx';
 
@@ -642,7 +642,7 @@ class Site extends Base
     }
 
     /**
-     * 获取网站三项配置开关（防跨站、日志、密码访问）
+     * 获取网站三项配置开关(防跨站、日志、密码访问)
      *
      * @param int $id 网站ID
      * @param string $path 网站运行目录
@@ -907,7 +907,7 @@ class Site extends Base
      *
      * @return mixed
      */
-    public function get301Status(string $siteName)
+    public function get301Status($siteName)
     {
         $data = [
             'siteName' => $siteName,
