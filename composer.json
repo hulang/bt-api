@@ -9,9 +9,10 @@
         }
     ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=8.0",
         "ext-json": "*",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "hulang/php-tool": "^1.0.0"
     },
     "autoload": {
         "psr-4": {

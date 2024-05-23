@@ -27,9 +27,9 @@ class Database extends Base
     /**
      * 列表
      *
-     * @param string $search
-     * @param int $limit
-     * @param int $page
+     * @param string $search 搜索
+     * @param int $limit 每页数量
+     * @param int $page 页码
      *
      * @return mixed|bool
      */
@@ -49,7 +49,14 @@ class Database extends Base
     }
     /**
      * 添加
-     *
+     * @param string $name
+     * @param string $username
+     * @param string $password
+     * @param string $ps
+     * @param string $access
+     * @param string $address
+     * @param string $coding
+     * @param string $type
      * @return mixed|bool
      */
     public function add(
@@ -83,9 +90,9 @@ class Database extends Base
     /**
      * 修改账号密码
      *
-     * @param $id
-     * @param $name
-     * @param $password
+     * @param int|string $id
+     * @param string $name
+     * @param string $password
      *
      * @return mixed|bool
      */
@@ -107,8 +114,8 @@ class Database extends Base
     /**
      * 删除
      *
-     * @param $id
-     * @param $name
+     * @param int|string $id
+     * @param string $name
      *
      * @return mixed|bool
      */

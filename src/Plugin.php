@@ -17,7 +17,7 @@ class Plugin extends Base
     /**
      * 获取一键部署列表
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function deployment()
     {
@@ -39,7 +39,7 @@ class Plugin extends Base
      * @param string $siteName
      * @param string $phpVersion
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function setupPackage($sourceName, $siteName, $phpVersion)
     {
@@ -59,7 +59,7 @@ class Plugin extends Base
     /**
      * 获取部署进度
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function getSpeed()
     {

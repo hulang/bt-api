@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace hulang\Bt;
 
 use hulang\Bt\Exceptions\BtException;
+use hulang\tool\File;
 
 class Base
 {
@@ -13,32 +14,64 @@ class Base
     protected $btKey;
     protected $cookiePath;
     protected $error;
-
+    /**
+     * 初始化
+     * @param string $panel 访问URL
+     * @param string $key 接口密钥
+     * @param string $cookiePath cookie保存路径
+     * @return $this
+     */
     public function __construct($panel, $key, $cookiePath)
     {
         $this->btPanel = $panel;
         $this->btKey = $key;
         $this->cookiePath = $cookiePath;
     }
+    /**
+     * 获取[访问URL]
+     * @param string $host 访问URL
+     * @return $this
+     */
     public function panel($host)
     {
         $this->btPanel = $host;
         return $this;
     }
+    /**
+     * 获取[接口密钥]
+     * @param string $key 接口密钥
+     * @return $this
+     */
     public function key($key)
     {
         $this->btKey = $key;
         return $this;
     }
+    /**
+     * 设置[错误]
+     * @param string $errorMsg 错误信息
+     * @return mixed|bool
+     */
     protected function error($errorMsg): bool
     {
         $this->error = $errorMsg;
         return false;
     }
+    /**
+     * 获取[错误]
+     * @return $this
+     */
     public function getError()
     {
         return $this->error;
     }
+    /**
+     * curl请求URL
+     * @param string $url 访问URL
+     * @param array $data 数据
+     * @param int $timeout 超时时间
+     * @return mixed|array|bool
+     */
     public function httpPostCookie($url, $data = [], $timeout = 60)
     {
         if (!$this->btPanel) {
@@ -53,10 +86,7 @@ class Base
             'bt',
             sha1($this->btPanel) . '.cookie'
         ]);
-        if (!file_exists($cookieFile)) {
-            $fp = fopen($cookieFile, 'w+');
-            fclose($fp);
-        }
+        File::readFile($cookieFile);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->btPanel . $url);
         curl_setopt($ch, CURLOPT_TIMEOUT, $timeout);

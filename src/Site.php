@@ -115,7 +115,7 @@ class Site extends Base
     }
 
     /**
-     * 获取已安装的 PHP 版本列表
+     * 获取已安装的[PHP]版本列表
      *
      * @return mixed
      */
@@ -131,7 +131,7 @@ class Site extends Base
     /**
      * 获取指定网站运行的PHP版本
      *
-     * @param string $siteName  网站名
+     * @param string $siteName 网站名
      *
      * @return mixed
      */
@@ -147,8 +147,8 @@ class Site extends Base
     /**
      * 修改指定网站的PHP版本
      *
-     * @param $siteName
-     * @param $version
+     * @param string $siteName
+     * @param string $version
      *
      * @return mixed
      */
@@ -181,7 +181,7 @@ class Site extends Base
      * @param int $type_id 网站分类
      * @param string $port 监听端口
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function add(
         $webName,
@@ -235,7 +235,7 @@ class Site extends Base
      * @param int $database 删除关联数据库
      * @param int $path 删除网站目录
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function delete($id, $webname, $ftp = 1, $database = 1, $path = 1)
     {
@@ -257,7 +257,7 @@ class Site extends Base
      * @param int $id 网站ID
      * @param string $name 网站名称
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function stop($id, $name)
     {
@@ -276,7 +276,7 @@ class Site extends Base
      * @param int $id 网站ID
      * @param string $name 网站名称
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function start($id, $name)
     {
@@ -295,7 +295,7 @@ class Site extends Base
      * @param int $id 网站ID
      * @param string $expired 到期时间 永久：0000-00-00
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function setExpired($id, $expired = '0000-00-00')
     {
@@ -317,7 +317,7 @@ class Site extends Base
      * @param int $id 网站ID
      * @param string $remark 备注内容
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function setRemark($id, $remark)
     {
@@ -340,7 +340,7 @@ class Site extends Base
      * @param int $page 页码
      * @param string $id 搜索,网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getBackupList($id, $page = 1, $limit = 5)
     {
@@ -363,7 +363,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function addBackup($id)
     {
@@ -379,7 +379,7 @@ class Site extends Base
      *
      * @param int $id 备份ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function deleteBackup($id)
     {
@@ -395,7 +395,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getDomainList($id)
     {
@@ -413,7 +413,7 @@ class Site extends Base
      * @param string $name 网站名称
      * @param string $domains 域名列表，例:www.123.com:81,多个换行符隔开，默认80端口
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function addDomain($id, $name, $domains)
     {
@@ -438,7 +438,7 @@ class Site extends Base
      * @param string $domain 域名
      * @param int $port 域名端口
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function deleteDomain($id, $name, $domain, $port = 80)
     {
@@ -461,7 +461,7 @@ class Site extends Base
      *
      * @param string $siteName 网站名称
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getRewriteList($siteName)
     {
@@ -480,13 +480,13 @@ class Site extends Base
      * 获取可选的预定义伪静态列表
      *
      * @param string $name 伪静态名称
-     * @param bool $site
+     * @param bool $state
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
-    public function getRewrite($name, $site = false)
+    public function getRewrite($name, $state = false)
     {
-        $dir = $site ? 'vhost/rewrite' : 'rewrite/nginx';
+        $dir = $state ? 'vhost/rewrite' : 'rewrite/nginx';
 
         return $this->getFileBody("/www/server/panel/{$dir}/{$name}.conf");
     }
@@ -498,7 +498,7 @@ class Site extends Base
      * @param string $content
      * @param bool $site
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function setRewrite($name, $content, $site = false)
     {
@@ -512,7 +512,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getRoot(int $id)
     {
@@ -534,7 +534,7 @@ class Site extends Base
      * @param string $username 用户名
      * @param string $password 密码
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function setHasPwd($id, $username, $password)
     {
@@ -556,7 +556,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function closeHasPwd($id)
     {
@@ -576,7 +576,7 @@ class Site extends Base
      *
      * @param string $siteName 网站名
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getSiteLogs($siteName)
     {
@@ -594,10 +594,10 @@ class Site extends Base
     /**
      * 获取网站盗链状态及规则信息
      *
-     * @param $id
-     * @param $name
+     * @param string $id
+     * @param string $name
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getSecurity($id, $name)
     {
@@ -622,7 +622,7 @@ class Site extends Base
      * @param string $domains 许可域名
      * @param int $status 状态
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function setSecurity($id, $name, $fix, $domains, $status)
     {
@@ -647,7 +647,7 @@ class Site extends Base
      * @param int $id 网站ID
      * @param string $path 网站运行目录
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getDirUserINI($id, $path)
     {
@@ -668,7 +668,7 @@ class Site extends Base
      *
      * @param string $siteName 网站域名(纯域名)
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function httpToHttps($siteName)
     {
@@ -688,7 +688,7 @@ class Site extends Base
      *
      * @param string $siteName 域名(纯域名)
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function closeToHttps($siteName)
     {
@@ -711,7 +711,7 @@ class Site extends Base
      * @param string $key 证书key
      * @param string $csr 证书PEM
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function setSSL($type, $siteName, $key, $csr)
     {
@@ -733,9 +733,9 @@ class Site extends Base
      *
      * 续签 SSL 证书
      *
-     * @param $index
+     * @param string $index
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function renewCert($index)
     {
@@ -756,7 +756,7 @@ class Site extends Base
      * @param int $updateOf 修改状态码
      * @param string $siteName 域名(纯域名)
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function closeSSLConf($updateOf, $siteName)
     {
@@ -777,7 +777,7 @@ class Site extends Base
      *
      * @param string $siteName 域名(纯域名)
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getSSL($siteName)
     {
@@ -797,7 +797,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function webGetIndex($id)
     {
@@ -818,7 +818,7 @@ class Site extends Base
      * @param int $id 网站ID
      * @param string $index 内容
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function webSetIndex($id, $index)
     {
@@ -839,7 +839,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getLimitNet($id)
     {
@@ -862,7 +862,7 @@ class Site extends Base
      * @param string $perip 单IP限制
      * @param string $limit_rate 流量限制
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function setLimitNet($id, $perserver, $perip, $limit_rate)
     {
@@ -885,7 +885,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function closeLimitNet(int $id)
     {
@@ -905,7 +905,7 @@ class Site extends Base
      *
      * @param string $siteName 网站名
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function get301Status($siteName)
     {
@@ -928,7 +928,7 @@ class Site extends Base
      * @param string $srcDomain 来自Url
      * @param int $type 类型
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function set301Status($siteName, $toDomain, $srcDomain, $type)
     {
@@ -951,7 +951,7 @@ class Site extends Base
      *
      * @param string $siteName 网站名称
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getProxyList($siteName)
     {
@@ -980,7 +980,7 @@ class Site extends Base
      * @param string $subfilter 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
      * @param int $type 开启或关闭 0关;1开
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function createProxy(
         $cache,
@@ -1028,7 +1028,7 @@ class Site extends Base
      * @param string $subfilter 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
      * @param int $type 开启或关闭 0关;1开
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function modifyProxy(
         $cache,
@@ -1067,7 +1067,7 @@ class Site extends Base
      *
      * @param int $id 网站ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function getDirBinding($id)
     {
@@ -1089,7 +1089,7 @@ class Site extends Base
      * @param string $domain 域名
      * @param string $dirName 目录
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function addDirBinding($id, $domain, $dirName)
     {
@@ -1111,7 +1111,7 @@ class Site extends Base
      *
      * @param int $id 子目录ID
      *
-     * @return mixed
+     * @return mixed|array|bool
      */
     public function delDirBinding($id)
     {
@@ -1132,7 +1132,7 @@ class Site extends Base
      * @param int $id
      * @param int $type
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function getDirRewrite($id, $type = 0)
     {
@@ -1150,6 +1150,13 @@ class Site extends Base
         }
     }
 
+    /**
+     * 获取文件内容
+     *
+     * @param string $path 路径
+     *
+     * @return mixed|array|bool
+     */
     public function getFileBody($path)
     {
         $data = [
@@ -1163,6 +1170,13 @@ class Site extends Base
         }
     }
 
+    /**
+     * 设置文件内容
+     *
+     * @param string $path 路径
+     *
+     * @return mixed|array|bool
+     */
     public function setFileBody($path, $content)
     {
         $data = [

@@ -27,7 +27,7 @@ class Ftp extends Base
      * @param int $limit
      * @param int $page
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function getList($search = '', $page = 1, $limit = 20)
     {
@@ -51,7 +51,7 @@ class Ftp extends Base
      * @param string $username
      * @param string $password
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function setUserPwd($id, $username, $password)
     {
@@ -75,7 +75,7 @@ class Ftp extends Base
      * @param string $username
      * @param int $status 0禁用，1启用
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function setStatus($id, $username, $status)
     {
@@ -98,7 +98,7 @@ class Ftp extends Base
      * @param int $id
      * @param string $username
      *
-     * @return mixed|bool
+     * @return mixed|array|bool
      */
     public function delete($id, $username)
     {
