@@ -14,14 +14,22 @@ class Database extends Base
      * @var string[]
      */
     protected $config = [
-        'List'        => '/data?action=getData&table=databases',         //获取数据库列表
-        'Add'         => '/database?action=AddDatabase',                 //添加数据库
-        'setPassword' => '/database?action=ResDatabasePassword',         //修改数据库账号密码
-        'Delete'      => '/database?action=DeleteDatabase',              //删除数据库
-        'Backup'      => '/data?action=getData&table=backup',            //数据库备份列表
-        'ToBackup'    => '/database?action=ToBackup',                    //创建数据库备份
-        'DelBackup'   => '/database?action=DelBackup',                   //删除数据库备份
-        'InputSql'    => '/database?action=InputSql'                     //从备份还原数据库
+        // 获取数据库列表
+        'List'          => '/data?action=getData&table=databases',
+        // 添加数据库
+        'Add'           => '/database?action=AddDatabase',
+        // 修改数据库账号密码
+        'setPassword'   => '/database?action=ResDatabasePassword',
+        // 删除数据库
+        'Delete'        => '/database?action=DeleteDatabase',
+        // 数据库备份列表
+        'Backup'        => '/data?action=getData&table=backup',
+        // 创建数据库备份
+        'ToBackup'      => '/database?action=ToBackup',
+        // 删除数据库备份
+        'DelBackup'     => '/database?action=DelBackup',
+        // 从备份还原数据库
+        'InputSql'      => '/database?action=InputSql'
     ];
 
     /**

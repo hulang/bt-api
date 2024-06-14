@@ -14,18 +14,22 @@ class Ftp extends Base
      * @var string[]
      */
     protected $config = [
-        'List'            => '/data?action=getData&table=ftps',             //获取FTP信息列表
-        'SetUserPassword' => '/ftp?action=SetUserPassword',                 //修改FTP账号密码
-        'SetStatus'       => '/ftp?action=SetStatus',                       //启用/禁用FTP
-        'DeleteUser'      => '/ftp?action=DeleteUser',                      //删除FTP
+        // 获取FTP信息列表
+        'List'              => '/data?action=getData&table=ftps',
+        // 修改FTP账号密码
+        'SetUserPassword'   => '/ftp?action=SetUserPassword',
+        // 启用/禁用FTP
+        'SetStatus'         => '/ftp?action=SetStatus',
+        // 删除FTP
+        'DeleteUser'        => '/ftp?action=DeleteUser',
     ];
 
     /**
      * 获取FTP列表
      *
-     * @param string $search
-     * @param int $limit
-     * @param int $page
+     * @param string $search 搜索
+     * @param int $limit 每页条数
+     * @param int $page 页码
      *
      * @return mixed|array|bool
      */
@@ -48,8 +52,8 @@ class Ftp extends Base
      * 修改FTP账号密码
      *
      * @param int $id
-     * @param string $username
-     * @param string $password
+     * @param string $username 用户名
+     * @param string $password 密码
      *
      * @return mixed|array|bool
      */
@@ -71,8 +75,8 @@ class Ftp extends Base
     /**
      * 禁用启用FTP
      *
-     * @param int $id
-     * @param string $username
+     * @param int $id ftp用户id
+     * @param string $username ftp用户名
      * @param int $status 0禁用，1启用
      *
      * @return mixed|array|bool

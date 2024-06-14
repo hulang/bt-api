@@ -14,11 +14,18 @@ class System extends Base
      * @var string[]
      */
     protected $config = [
-        'GetSystemTotal' => '/system?action=GetSystemTotal',                //获取系统基础统计
-        'GetDiskInfo'    => '/system?action=GetDiskInfo',                   //获取磁盘分区信息
-        'GetNetWork'     => '/system?action=GetNetWork',                    //获取实时状态信息(CPU、内存、网络、负载)
-        'GetTaskCount'   => '/ajax?action=GetTaskCount',                    //检查是否有安装任务
-        'UpdatePanel'    => '/ajax?action=UpdatePanel',                     //检查面板更新
+        // 获取系统基础统计
+        'GetSystemTotal'    => '/system?action=GetSystemTotal',
+        // 获取磁盘分区信息
+        'GetDiskInfo'       => '/system?action=GetDiskInfo',
+        // 获取实时状态信息(CPU、内存、网络、负载)
+        'GetNetWork'        => '/ajax?action=GetTaskCount',
+        // 检查是否有安装任务
+        'GetTaskCount'      => '/ajax?action=GetTaskCount',
+        // 检查面板更新
+        'UpdatePanel'       => '/ajax?action=UpdatePanel',
+        // 获取全局配置
+        'GetConfig'         => '/config?action=get_config',
     ];
 
     /**
@@ -58,6 +65,20 @@ class System extends Base
     {
         try {
             return $this->httpPostCookie($this->getUrl('GetNetWork'));
+        } catch (Exception $e) {
+            return $this->error($e->getMessage());
+        }
+    }
+
+    /**
+     * 获取全局配置
+     *
+     * @return mixed|array|bool
+     */
+    public function GetConfig()
+    {
+        try {
+            return $this->httpPostCookie($this->getUrl('GetConfig'));
         } catch (Exception $e) {
             return $this->error($e->getMessage());
         }

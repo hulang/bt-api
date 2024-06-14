@@ -14,7 +14,8 @@ class File extends Base
      * @var string[]
      */
     protected $config = [
-        'Upload' => '/files?action=upload' //上传文件
+        // 上传文件
+        'Upload' => '/files?action=upload'
     ];
 
     /**

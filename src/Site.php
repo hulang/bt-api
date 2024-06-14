@@ -14,63 +14,102 @@ class Site extends Base
      * @var string[]
      */
     protected $config = [
-        'Websites'          => '/data?action=getData&table=sites',                 //获取网站列表
-        'WebTypes'          => '/site?action=get_site_types',                      //获取网站分类
-        'GetPHPVersion'     => '/site?action=GetPHPVersion',                       //获取已安装的 PHP 版本列表
-        'GetSitePHPVersion' => '/site?action=GetSitePHPVersion',                   //获取指定网站运行的PHP版本
-        'SetPHPVersion'     => '/site?action=SetPHPVersion',                       //修改指定网站的PHP版本
-        'AddSite'           => '/site?action=AddSite',                             //创建网站
-        'DeleteSite'        => '/site?action=DeleteSite',                          //删除网站
-        'StopSite'          => '/site?action=SiteStop',                            //停用网站
-        'StartSite'         => '/site?action=SiteStart',                           //启用网站
-        'SetExpired'        => '/site?action=SetEdate',                            //设置网站有效期
-        'SetPs'             => '/data?action=setPs&table=sites',                   //修改网站备注
-
-        'WebBackups' => '/data?action=getData&table=backup',             //获取网站备份列表
-        'ToBackup'   => '/site?action=ToBackup',                         //创建网站备份
-        'DelBackup'  => '/site?action=DelBackup',                        //删除网站备份
-
-        'DomainList' => '/data?action=getData&table=domain',     //获取网站域名列表
-        'AddDomain'  => '/site?action=AddDomain',                //添加网站域名
-        'DelDomain'  => '/site?action=DelDomain',                //删除网站域名
-
-        'GetRewriteList' => '/site?action=GetRewriteList',           //获取可选的预定义伪静态列表
-
-        'WebPath' => '/data?action=getKey&table=sites&key=path',    // 获取网站根目录
-
-        'SetHasPwd'     => '/site?action=SetHasPwd',                 //开启并设置网站密码访问
-        'CloseHasPwd'   => '/site?action=CloseHasPwd',               //关闭网站密码访问
-        'GetDirUserINI' => '/site?action=GetDirUserINI',             //获取网站几项开关（防跨站、日志、密码访问）
-
-        'GetDirBinding' => '/site?action=GetDirBinding',         //获取网站域名绑定二级目录信息
-        'AddDirBinding' => '/site?action=AddDirBinding',         //添加网站子目录域名
-        'DelDirBinding' => '/site?action=DelDirBinding',         //删除网站绑定子目录
-        'GetDirRewrite' => '/site?action=GetDirRewrite',         //获取网站子目录伪静态规则
-
-        'GetSiteLogs'   => '/site?action=GetSiteLogs',                    //获取网站日志
-        'GetSecurity'   => '/site?action=GetSecurity',                    //获取网站盗链状态及规则信息
-        'SetSecurity'   => '/site?action=SetSecurity',                    //设置网站盗链状态及规则信息
-        'GetSSL'        => '/site?action=GetSSL',                         //获取SSL状态及证书详情
-        'HttpToHttps'   => '/site?action=HttpToHttps',                    //强制HTTPS
-        'CloseToHttps'  => '/site?action=CloseToHttps',                   //关闭强制HTTPS
-        'SetSSL'        => '/site?action=SetSSL',                         //设置SSL证书
-        'RenewCert'     => '/acme?action=renew_cert',                     //续签SSL证书
-        'ApplyCertApi'  => '/acme?action=apply_cert_api',                 //设置 Let's Encrypt 证书
-        'CloseSSLConf'  => '/site?action=CloseSSLConf',                   //关闭SSL
-        'WebGetIndex'   => '/site?action=GetIndex',                       //获取网站默认文件
-        'WebSetIndex'   => '/site?action=SetIndex',                       //设置网站默认文件
-        'GetLimitNet'   => '/site?action=GetLimitNet',                    //获取网站流量限制信息
-        'SetLimitNet'   => '/site?action=SetLimitNet',                    //设置网站流量限制信息
-        'CloseLimitNet' => '/site?action=CloseLimitNet',                  //关闭网站流量限制
-        'Get301Status'  => '/site?action=Get301Status',                   //获取网站301重定向信息
-        'Set301Status'  => '/site?action=Set301Status',                   //设置网站301重定向信息
-
-        'GetProxyList' => '/site?action=GetProxyList',            //获取网站反代信息及状态
-        'CreateProxy'  => '/site?action=CreateProxy',             //添加网站反代信息
-        'ModifyProxy'  => '/site?action=ModifyProxy',             //修改网站反代信息
-
-        'GetFileBody'  => '/files?action=GetFileBody',                //获取指定预定义伪静态规则内容(获取文件内容)
-        'SaveFileBody' => '/files?action=SaveFileBody',               //保存伪静态规则内容(保存文件内容)
+        // 获取网站列表
+        'Websites'          => '/data?action=getData&table=sites',
+        // 获取网站分类
+        'WebTypes'          => '/site?action=get_site_types',
+        // 获取已安装的 PHP 版本列表
+        'GetPHPVersion'     => '/site?action=GetPHPVersion',
+        // 获取指定网站运行的PHP版本
+        'GetSitePHPVersion' => '/site?action=GetSitePHPVersion',
+        // 修改指定网站的PHP版本
+        'SetPHPVersion'     => '/site?action=SetPHPVersion',
+        // 创建网站
+        'AddSite'           => '/site?action=AddSite',
+        // 删除网站
+        'DeleteSite'        => '/site?action=DeleteSite',
+        // 停用网站
+        'StopSite'          => '/site?action=SiteStop',
+        // 启用网站
+        'StartSite'         => '/site?action=SiteStart',
+        // 设置网站有效期
+        'SetExpired'        => '/site?action=SetEdate',
+        // 修改网站备注
+        'SetPs'             => '/data?action=setPs&table=sites',
+        //获取网站备份列表
+        'WebBackups' => '/data?action=getData&table=backup',
+        //创建网站备份
+        'ToBackup'   => '/site?action=ToBackup',
+        //删除网站备份
+        'DelBackup'  => '/site?action=DelBackup',
+        //获取网站域名列表
+        'DomainList' => '/data?action=getData&table=domain',
+        //添加网站域名
+        'AddDomain'  => '/site?action=AddDomain',
+        //删除网站域名
+        'DelDomain'  => '/site?action=DelDomain',
+        //获取可选的预定义伪静态列表
+        'GetRewriteList' => '/site?action=GetRewriteList',
+        // 获取网站根目录
+        'WebPath' => '/data?action=getKey&table=sites&key=path',
+        //开启并设置网站密码访问
+        'SetHasPwd'     => '/site?action=SetHasPwd',
+        //关闭网站密码访问
+        'CloseHasPwd'   => '/site?action=CloseHasPwd',
+        //获取网站几项开关(防跨站、日志、密码访问)
+        'GetDirUserINI' => '/site?action=GetDirUserINI',
+        //获取网站域名绑定二级目录信息
+        'GetDirBinding' => '/site?action=GetDirBinding',
+        //添加网站子目录域名
+        'AddDirBinding' => '/site?action=AddDirBinding',
+        //删除网站绑定子目录
+        'DelDirBinding' => '/site?action=DelDirBinding',
+        //获取网站子目录伪静态规则
+        'GetDirRewrite' => '/site?action=GetDirRewrite',
+        //获取网站日志
+        'GetSiteLogs'   => '/site?action=GetSiteLogs',
+        //获取网站盗链状态及规则信息
+        'GetSecurity'   => '/site?action=GetSecurity',
+        //设置网站盗链状态及规则信息
+        'SetSecurity'   => '/site?action=SetSecurity',
+        //获取SSL状态及证书详情
+        'GetSSL'        => '/site?action=GetSSL',
+        //强制HTTPS
+        'HttpToHttps'   => '/site?action=HttpToHttps',
+        //关闭强制HTTPS
+        'CloseToHttps'  => '/site?action=CloseToHttps',
+        //设置SSL证书
+        'SetSSL'        => '/site?action=SetSSL',
+        //续签SSL证书
+        'RenewCert'     => '/acme?action=renew_cert',
+        //设置 Let's Encrypt 证书
+        'ApplyCertApi'  => '/acme?action=apply_cert_api',
+        //关闭SSL
+        'CloseSSLConf'  => '/site?action=CloseSSLConf',
+        //获取网站默认文件
+        'WebGetIndex'   => '/site?action=GetIndex',
+        //设置网站默认文件
+        'WebSetIndex'   => '/site?action=SetIndex',
+        //获取网站流量限制信息
+        'GetLimitNet'   => '/site?action=GetLimitNet',
+        //设置网站流量限制信息
+        'SetLimitNet'   => '/site?action=SetLimitNet',
+        //关闭网站流量限制
+        'CloseLimitNet' => '/site?action=CloseLimitNet',
+        //获取网站301重定向信息
+        'Get301Status'  => '/site?action=Get301Status',
+        //设置网站301重定向信息
+        'Set301Status'  => '/site?action=Set301Status',
+        //获取网站反代信息及状态
+        'GetProxyList' => '/site?action=GetProxyList',
+        //添加网站反代信息
+        'CreateProxy'  => '/site?action=CreateProxy',
+        //修改网站反代信息
+        'ModifyProxy'  => '/site?action=ModifyProxy',
+        //获取指定预定义伪静态规则内容(获取文件内容)
+        'GetFileBody'  => '/files?action=GetFileBody',
+        //保存伪静态规则内容(保存文件内容)
+        'SaveFileBody' => '/files?action=SaveFileBody',
     ];
 
     /**
@@ -147,8 +186,8 @@ class Site extends Base
     /**
      * 修改指定网站的PHP版本
      *
-     * @param string $siteName
-     * @param string $version
+     * @param string $siteName 网站名称
+     * @param string $version PHP版本
      *
      * @return mixed
      */
@@ -206,7 +245,7 @@ class Site extends Base
             ]),
             'path'         => $path,
             'type_id'      => $type_id,
-            'type'         => "PHP",
+            'type'         => 'PHP',
             'version'      => $version,
             'port'         => $port,
             'ps'           => $ps,
