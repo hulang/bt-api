@@ -131,6 +131,7 @@ class Site extends Base
             'limit'  => $limit,
             'type'   => $type,
             'order'  => $order,
+            'table'  => 'sites',
         ];
         try {
             return $this->httpPostCookie($this->getUrl('Websites'), $data);
