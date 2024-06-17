@@ -1,5 +1,9 @@
 #### 宝塔面板API 插件扩展包
 
+<p align="center"> 
+  您是第  <img src="https://profile-counter.glitch.me/github:hulang:bt-api/count.svg" />位访问者
+</p>
+
 #### 环境
 
 - php >=8.0.0
