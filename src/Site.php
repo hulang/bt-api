@@ -36,79 +36,79 @@ class Site extends Base
         'SetExpired'        => '/site?action=SetEdate',
         // 修改网站备注
         'SetPs'             => '/data?action=setPs&table=sites',
-        //获取网站备份列表
+        // 获取网站备份列表
         'WebBackups' => '/data?action=getData&table=backup',
-        //创建网站备份
+        // 创建网站备份
         'ToBackup'   => '/site?action=ToBackup',
-        //删除网站备份
+        // 删除网站备份
         'DelBackup'  => '/site?action=DelBackup',
-        //获取网站域名列表
+        // 获取网站域名列表
         'DomainList' => '/data?action=getData&table=domain',
-        //添加网站域名
+        // 添加网站域名
         'AddDomain'  => '/site?action=AddDomain',
-        //删除网站域名
+        // 删除网站域名
         'DelDomain'  => '/site?action=DelDomain',
-        //获取可选的预定义伪静态列表
+        // 获取可选的预定义伪静态列表
         'GetRewriteList' => '/site?action=GetRewriteList',
         // 获取网站根目录
         'WebPath' => '/data?action=getKey&table=sites&key=path',
-        //开启并设置网站密码访问
+        // 开启并设置网站密码访问
         'SetHasPwd'     => '/site?action=SetHasPwd',
-        //关闭网站密码访问
+        // 关闭网站密码访问
         'CloseHasPwd'   => '/site?action=CloseHasPwd',
-        //获取网站几项开关(防跨站、日志、密码访问)
+        // 获取网站几项开关(防跨站、日志、密码访问)
         'GetDirUserINI' => '/site?action=GetDirUserINI',
-        //获取网站域名绑定二级目录信息
+        // 获取网站域名绑定二级目录信息
         'GetDirBinding' => '/site?action=GetDirBinding',
-        //添加网站子目录域名
+        // 添加网站子目录域名
         'AddDirBinding' => '/site?action=AddDirBinding',
-        //删除网站绑定子目录
+        // 删除网站绑定子目录
         'DelDirBinding' => '/site?action=DelDirBinding',
-        //获取网站子目录伪静态规则
+        // 获取网站子目录伪静态规则
         'GetDirRewrite' => '/site?action=GetDirRewrite',
-        //获取网站日志
+        // 获取网站日志
         'GetSiteLogs'   => '/site?action=GetSiteLogs',
-        //获取网站盗链状态及规则信息
+        // 获取网站盗链状态及规则信息
         'GetSecurity'   => '/site?action=GetSecurity',
-        //设置网站盗链状态及规则信息
+        // 设置网站盗链状态及规则信息
         'SetSecurity'   => '/site?action=SetSecurity',
-        //获取SSL状态及证书详情
+        // 获取SSL状态及证书详情
         'GetSSL'        => '/site?action=GetSSL',
-        //强制HTTPS
+        // 强制HTTPS
         'HttpToHttps'   => '/site?action=HttpToHttps',
-        //关闭强制HTTPS
+        // 关闭强制HTTPS
         'CloseToHttps'  => '/site?action=CloseToHttps',
-        //设置SSL证书
+        // 设置SSL证书
         'SetSSL'        => '/site?action=SetSSL',
-        //续签SSL证书
+        // 续签SSL证书
         'RenewCert'     => '/acme?action=renew_cert',
-        //设置 Let's Encrypt 证书
+        // 设置 Let's Encrypt 证书
         'ApplyCertApi'  => '/acme?action=apply_cert_api',
-        //关闭SSL
+        // 关闭SSL
         'CloseSSLConf'  => '/site?action=CloseSSLConf',
-        //获取网站默认文件
+        // 获取网站默认文件
         'WebGetIndex'   => '/site?action=GetIndex',
-        //设置网站默认文件
+        // 设置网站默认文件
         'WebSetIndex'   => '/site?action=SetIndex',
-        //获取网站流量限制信息
+        // 获取网站流量限制信息
         'GetLimitNet'   => '/site?action=GetLimitNet',
-        //设置网站流量限制信息
+        // 设置网站流量限制信息
         'SetLimitNet'   => '/site?action=SetLimitNet',
-        //关闭网站流量限制
+        // 关闭网站流量限制
         'CloseLimitNet' => '/site?action=CloseLimitNet',
-        //获取网站301重定向信息
+        // 获取网站301重定向信息
         'Get301Status'  => '/site?action=Get301Status',
-        //设置网站301重定向信息
+        // 设置网站301重定向信息
         'Set301Status'  => '/site?action=Set301Status',
-        //获取网站反代信息及状态
+        // 获取网站反代信息及状态
         'GetProxyList' => '/site?action=GetProxyList',
-        //添加网站反代信息
+        // 添加网站反代信息
         'CreateProxy'  => '/site?action=CreateProxy',
-        //修改网站反代信息
+        // 修改网站反代信息
         'ModifyProxy'  => '/site?action=ModifyProxy',
-        //获取指定预定义伪静态规则内容(获取文件内容)
+        // 获取指定预定义伪静态规则内容(获取文件内容)
         'GetFileBody'  => '/files?action=GetFileBody',
-        //保存伪静态规则内容(保存文件内容)
+        // 保存伪静态规则内容(保存文件内容)
         'SaveFileBody' => '/files?action=SaveFileBody',
     ];
 
@@ -826,6 +826,30 @@ class Site extends Base
 
         try {
             return $this->httpPostCookie($this->getUrl('GetSSL'), $data);
+        } catch (Exception $e) {
+            return $this->error($e->getMessage());
+        }
+    }
+
+    /**
+     * 设置 Let's Encrypt 证书
+     *
+     * @param int $id 网站ID
+     * @param string $domain 域名(纯域名)
+     *
+     * @return mixed|array|bool
+     */
+    public function getApplyCertApi($id = 0, $domain = '')
+    {
+        $data = [
+            'domains'       => [$domain],
+            'auth_type'     => 'http',
+            'auth_to'       => $id,
+            'auto_wildcard' => 0,
+            'id'            => $id,
+        ];
+        try {
+            return $this->httpPostCookie($this->getUrl('ApplyCertApi'), $data);
         } catch (Exception $e) {
             return $this->error($e->getMessage());
         }
