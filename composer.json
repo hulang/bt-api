@@ -1,6 +1,6 @@
 {
     "name": "hulang/bt-api",
-    "description": "宝塔面板API接口扩展包",
+    "description": "宝塔面板API接口",
     "license": "MIT",
     "authors": [
         {
