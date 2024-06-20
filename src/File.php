@@ -38,10 +38,10 @@ class File extends Base
         // 构造上传文件的信息数组
         $data = [
             'f_path' => $uploadPath,
-            'f_name' => $fileName,
+            'f_name' => end($fileName),
             'f_size' => filesize($localFilePath),
             'f_start' => 0,
-            'file' => new \CURLFile($localFilePath, '', 'blob'),
+            'blob' => new \CURLFile($localFilePath, '', 'blob'),
         ];
         try {
             // 使用HTTP POST方法上传文件,并返回上传结果
