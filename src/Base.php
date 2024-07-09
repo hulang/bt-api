@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace hulang\Bt;
 
 use hulang\Bt\Exceptions\BtException;
-use hulang\tool\File;
+use hulang\tool\FileHelper;
 
 class Base
 {
@@ -160,7 +160,7 @@ class Base
             sha1($this->btPanel) . '.cookie'
         ]);
         // 读取cookie文件,确保其存在
-        File::readFile($cookieFile);
+        FileHelper::readFile($cookieFile);
         // 初始化cURL会话
         $ch = curl_init();
         // 配置cURL选项,包括URL、超时时间、请求类型、POST数据、cookie处理等
