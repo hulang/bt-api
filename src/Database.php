@@ -15,21 +15,21 @@ class Database extends Base
      */
     protected $config = [
         // 获取数据库列表
-        'List'          => '/data?action=getData&table=databases',
+        'List' => '/data?action=getData&table=databases',
         // 添加数据库
-        'Add'           => '/database?action=AddDatabase',
+        'Add' => '/database?action=AddDatabase',
         // 修改数据库账号密码
-        'setPassword'   => '/database?action=ResDatabasePassword',
+        'setPassword' => '/database?action=ResDatabasePassword',
         // 删除数据库
-        'Delete'        => '/database?action=DeleteDatabase',
+        'Delete' => '/database?action=DeleteDatabase',
         // 数据库备份列表
-        'Backup'        => '/data?action=getData&table=backup',
+        'Backup' => '/data?action=getData&table=backup',
         // 创建数据库备份
-        'ToBackup'      => '/database?action=ToBackup',
+        'ToBackup' => '/database?action=ToBackup',
         // 删除数据库备份
-        'DelBackup'     => '/database?action=DelBackup',
+        'DelBackup' => '/database?action=DelBackup',
         // 从备份还原数据库
-        'InputSql'      => '/database?action=InputSql'
+        'InputSql' => '/database?action=InputSql',
     ];
 
     /**
@@ -64,7 +64,7 @@ class Database extends Base
      * 添加新的数据库配置信息
      * 
      * 通过此方法可以向系统中添加一个新的数据库配置项.配置项包括数据库的名称、用户名、密码、编码方式、访问权限、地址等信息
-     * 默认情况下,访问权限和地址被设置为本地地址（127.0.0.1）,编码方式为utf8,数据库类型为MySQL
+     * 默认情况下,访问权限和地址被设置为本地地址(127.0.0.1),编码方式为utf8,数据库类型为MySQL
      * 
      * @param string $name 数据库的名称,用于标识这个数据库配置
      * @param string $username 登录数据库所使用的用户名
@@ -131,7 +131,8 @@ class Database extends Base
     /**
      * 删除操作
      * 
-     * 本函数执行针对特定ID和名称的删除操作.它首先组装请求数据,然后通过HTTP POST请求带Cookie的方式发送删除请求
+     * 本函数执行针对特定ID和名称的删除操作
+     * 它首先组装请求数据,然后通过HTTP POST请求带Cookie的方式发送删除请求
      * 如果请求成功,它将返回处理结果;如果请求失败,它将返回错误信息
      * 
      * @param int|string $id 要删除的项的ID.可以是整数或字符串,具体取决于应用的设定
@@ -239,9 +240,9 @@ class Database extends Base
     /**
      * 从备份文件恢复数据库
      * 
-     * 本函数负责通过HTTP POST请求将指定的SQL备份文件导入到指定的数据库中.
-     * 它首先构造了一个包含备份文件路径和数据库名称的数据数组,然后尝试发送这个数组作为POST请求的参数到服务端的InputSql接口.
-     * 如果请求成功,函数将返回服务端的响应数据;
+     * 本函数负责通过HTTP POST请求将指定的SQL备份文件导入到指定的数据库中
+     * 它首先构造了一个包含备份文件路径和数据库名称的数据数组,然后尝试发送这个数组作为POST请求的参数到服务端的InputSql接口
+     * 如果请求成功,函数将返回服务端的响应数据
      * 如果请求失败,函数将捕获抛出的异常,并返回错误信息
      * 
      * @param string $filePath 备份文件的路径.这是本地文件系统中备份文件的路径

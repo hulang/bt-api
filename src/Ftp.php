@@ -15,13 +15,13 @@ class Ftp extends Base
      */
     protected $config = [
         // 获取FTP信息列表
-        'List'              => '/data?action=getData&table=ftps',
+        'List' => '/data?action=getData&table=ftps',
         // 修改FTP账号密码
-        'SetUserPassword'   => '/ftp?action=SetUserPassword',
+        'SetUserPassword' => '/ftp?action=SetUserPassword',
         // 启用/禁用FTP
-        'SetStatus'         => '/ftp?action=SetStatus',
+        'SetStatus' => '/ftp?action=SetStatus',
         // 删除FTP
-        'DeleteUser'        => '/ftp?action=DeleteUser',
+        'DeleteUser' => '/ftp?action=DeleteUser',
     ];
 
     /**
@@ -115,7 +115,8 @@ class Ftp extends Base
     /**
      * 删除FTP
      *
-     * 本函数用于执行用户删除操作.它通过发送一个带有用户ID和用户名的HTTP POST请求到指定的URL来实现
+     * 本函数用于执行用户删除操作
+     * 它通过发送一个带有用户ID和用户名的HTTP POST请求到指定的URL来实现
      * 如果请求成功,它将返回处理结果;如果请求失败,它将返回错误信息
      *
      * @param int $id 用户ID,用于唯一标识用户

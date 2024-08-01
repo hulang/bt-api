@@ -15,47 +15,47 @@ class Site extends Base
      */
     protected $config = [
         // 获取网站列表
-        'Websites'          => '/data?action=getData&table=sites',
+        'Websites' => '/data?action=getData&table=sites',
         // 获取网站分类
-        'WebTypes'          => '/site?action=get_site_types',
+        'WebTypes' => '/site?action=get_site_types',
         // 获取已安装的 PHP 版本列表
-        'GetPHPVersion'     => '/site?action=GetPHPVersion',
+        'GetPHPVersion' => '/site?action=GetPHPVersion',
         // 获取指定网站运行的PHP版本
         'GetSitePHPVersion' => '/site?action=GetSitePHPVersion',
         // 修改指定网站的PHP版本
-        'SetPHPVersion'     => '/site?action=SetPHPVersion',
+        'SetPHPVersion' => '/site?action=SetPHPVersion',
         // 创建网站
-        'AddSite'           => '/site?action=AddSite',
+        'AddSite' => '/site?action=AddSite',
         // 删除网站
-        'DeleteSite'        => '/site?action=DeleteSite',
+        'DeleteSite' => '/site?action=DeleteSite',
         // 停用网站
-        'StopSite'          => '/site?action=SiteStop',
+        'StopSite' => '/site?action=SiteStop',
         // 启用网站
-        'StartSite'         => '/site?action=SiteStart',
+        'StartSite' => '/site?action=SiteStart',
         // 设置网站有效期
-        'SetExpired'        => '/site?action=SetEdate',
+        'SetExpired' => '/site?action=SetEdate',
         // 修改网站备注
-        'SetPs'             => '/data?action=setPs&table=sites',
+        'SetPs' => '/data?action=setPs&table=sites',
         // 获取网站备份列表
         'WebBackups' => '/data?action=getData&table=backup',
         // 创建网站备份
-        'ToBackup'   => '/site?action=ToBackup',
+        'ToBackup' => '/site?action=ToBackup',
         // 删除网站备份
-        'DelBackup'  => '/site?action=DelBackup',
+        'DelBackup' => '/site?action=DelBackup',
         // 获取网站域名列表
         'DomainList' => '/data?action=getData&table=domain',
         // 添加网站域名
-        'AddDomain'  => '/site?action=AddDomain',
+        'AddDomain' => '/site?action=AddDomain',
         // 删除网站域名
-        'DelDomain'  => '/site?action=DelDomain',
+        'DelDomain' => '/site?action=DelDomain',
         // 获取可选的预定义伪静态列表
         'GetRewriteList' => '/site?action=GetRewriteList',
         // 获取网站根目录
         'WebPath' => '/data?action=getKey&table=sites&key=path',
         // 开启并设置网站密码访问
-        'SetHasPwd'     => '/site?action=SetHasPwd',
+        'SetHasPwd' => '/site?action=SetHasPwd',
         // 关闭网站密码访问
-        'CloseHasPwd'   => '/site?action=CloseHasPwd',
+        'CloseHasPwd' => '/site?action=CloseHasPwd',
         // 获取网站几项开关(防跨站、日志、密码访问)
         'GetDirUserINI' => '/site?action=GetDirUserINI',
         // 获取网站域名绑定二级目录信息
@@ -67,47 +67,47 @@ class Site extends Base
         // 获取网站子目录伪静态规则
         'GetDirRewrite' => '/site?action=GetDirRewrite',
         // 获取网站日志
-        'GetSiteLogs'   => '/site?action=GetSiteLogs',
+        'GetSiteLogs' => '/site?action=GetSiteLogs',
         // 获取网站盗链状态及规则信息
-        'GetSecurity'   => '/site?action=GetSecurity',
+        'GetSecurity' => '/site?action=GetSecurity',
         // 设置网站盗链状态及规则信息
-        'SetSecurity'   => '/site?action=SetSecurity',
+        'SetSecurity' => '/site?action=SetSecurity',
         // 获取SSL状态及证书详情
-        'GetSSL'        => '/site?action=GetSSL',
+        'GetSSL' => '/site?action=GetSSL',
         // 强制HTTPS
-        'HttpToHttps'   => '/site?action=HttpToHttps',
+        'HttpToHttps' => '/site?action=HttpToHttps',
         // 关闭强制HTTPS
-        'CloseToHttps'  => '/site?action=CloseToHttps',
+        'CloseToHttps' => '/site?action=CloseToHttps',
         // 设置SSL证书
-        'SetSSL'        => '/site?action=SetSSL',
+        'SetSSL' => '/site?action=SetSSL',
         // 续签SSL证书
-        'RenewCert'     => '/acme?action=renew_cert',
+        'RenewCert' => '/acme?action=renew_cert',
         // 设置 Let's Encrypt 证书
-        'ApplyCertApi'  => '/acme?action=apply_cert_api',
+        'ApplyCertApi' => '/acme?action=apply_cert_api',
         // 关闭SSL
-        'CloseSSLConf'  => '/site?action=CloseSSLConf',
+        'CloseSSLConf' => '/site?action=CloseSSLConf',
         // 获取网站默认文件
-        'WebGetIndex'   => '/site?action=GetIndex',
+        'WebGetIndex' => '/site?action=GetIndex',
         // 设置网站默认文件
-        'WebSetIndex'   => '/site?action=SetIndex',
+        'WebSetIndex' => '/site?action=SetIndex',
         // 获取网站流量限制信息
-        'GetLimitNet'   => '/site?action=GetLimitNet',
+        'GetLimitNet' => '/site?action=GetLimitNet',
         // 设置网站流量限制信息
-        'SetLimitNet'   => '/site?action=SetLimitNet',
+        'SetLimitNet' => '/site?action=SetLimitNet',
         // 关闭网站流量限制
         'CloseLimitNet' => '/site?action=CloseLimitNet',
         // 获取网站301重定向信息
-        'Get301Status'  => '/site?action=Get301Status',
+        'Get301Status' => '/site?action=Get301Status',
         // 设置网站301重定向信息
-        'Set301Status'  => '/site?action=Set301Status',
+        'Set301Status' => '/site?action=Set301Status',
         // 获取网站反代信息及状态
         'GetProxyList' => '/site?action=GetProxyList',
         // 添加网站反代信息
-        'CreateProxy'  => '/site?action=CreateProxy',
+        'CreateProxy' => '/site?action=CreateProxy',
         // 修改网站反代信息
-        'ModifyProxy'  => '/site?action=ModifyProxy',
+        'ModifyProxy' => '/site?action=ModifyProxy',
         // 获取指定预定义伪静态规则内容(获取文件内容)
-        'GetFileBody'  => '/files?action=GetFileBody',
+        'GetFileBody' => '/files?action=GetFileBody',
         // 保存伪静态规则内容(保存文件内容)
         'SaveFileBody' => '/files?action=SaveFileBody',
     ];
@@ -307,9 +307,9 @@ class Site extends Base
      */
     public function delete($id, $webname, $ftp = 1, $database = 1, $path = 1)
     {
-        // 网站ID和网站名称是删除操作的必要信息.
+        // 网站ID和网站名称是删除操作的必要信息
         $data = compact('id', 'webname');
-        // 根据参数设置是否删除FTP、数据库和网站目录.
+        // 根据参数设置是否删除FTP、数据库和网站目录
         if ($ftp >= 1) {
             $data['ftp'] = 1;
         }
@@ -319,7 +319,7 @@ class Site extends Base
         if ($path >= 1) {
             $data['path'] = 1;
         }
-        // 尝试通过HTTP POST请求执行删除操作,如果发生异常,则返回错误信息.
+        // 尝试通过HTTP POST请求执行删除操作,如果发生异常,则返回错误信息
         try {
             return $this->httpPostCookie($this->getUrl('DeleteSite'), $data);
         } catch (Exception $e) {
@@ -545,7 +545,7 @@ class Site extends Base
 
     /**
      * 添加网站域名
-     * 该方法用于向系统中添加一个新的网站域名.
+     * 该方法用于向系统中添加一个新的网站域名
      * 它通过HTTP POST请求向指定的URL发送数据,以添加域名信息
      * 
      * @param int $id 网站ID,用于标识要添加域名的网站
@@ -640,10 +640,10 @@ class Site extends Base
      * @param string $name 伪静态规则文件的名称
      *                     这个参数指定了要获取的伪静态规则文件的名称,不包含后缀名
      * @param bool $state 是否启用伪静态的状态
-     *                    如果为true,则表示启用伪静态,函数将返回启用状态下的规则文件内容;
+     *                    如果为true,则表示启用伪静态,函数将返回启用状态下的规则文件内容
      *                    如果为false,则表示未启用伪静态,函数将返回未启用状态下的规则文件内容
      * @return mixed|array|bool 返回获取的伪静态规则文件的内容
-     *                          如果成功获取到内容,则返回文件的内容数组;
+     *                          如果成功获取到内容,则返回文件的内容数组
      *                          如果未启用伪静态且未找到相应的文件,则返回false
      */
     public function getRewrite($name, $state = false)
@@ -684,8 +684,8 @@ class Site extends Base
      * 这对于需要知道网站基础路径的场景非常有用,比如文件上传、链接生成等
      * 
      * @param int $id 网站的唯一标识ID,用于定位特定网站
-     * @return mixed|array|bool 返回值可以是多种类型：
-     * - 成功时,返回一个包含根目录信息的数组;
+     * @return mixed|array|bool 返回值可以是多种类型
+     * - 成功时,返回一个包含根目录信息的数组
      * - 失败时,返回false或者一个包含错误信息的数组
      * 
      * 注意：本函数内部使用了try-catch块来处理可能的异常,确保了函数的健壮性
@@ -710,7 +710,7 @@ class Site extends Base
      * 
      * 本函数用于为指定的网站ID设置访问密码
      * 通过发送HTTP POST请求,将网站ID、用户名和密码封装在请求体中,发送到服务器端进行设置
-     * 如果设置成功,服务器将返回相应的结果;如果设置失败,则会捕获异常并返回错误信息.
+     * 如果设置成功,服务器将返回相应的结果;如果设置失败,则会捕获异常并返回错误信息
      * 
      * @param int $id 网站ID,用于标识需要设置密码的网站
      * @param string $username 设置的用户名,用于网站的登录认证
@@ -966,7 +966,8 @@ class Site extends Base
     /**
      * 续签 SSL 证书
      * 
-     * 本函数用于发起续签 SSL 证书的请求.它通过发送一个包含证书索引信息的HTTP POST请求来完成续签操作
+     * 本函数用于发起续签 SSL 证书的请求
+     * 它通过发送一个包含证书索引信息的HTTP POST请求来完成续签操作
      * 如果请求成功,它将返回处理结果;如果请求失败,则会返回错误信息
      * 
      * @param string $index 证书索引号,用于标识需要续签的证书
@@ -995,8 +996,8 @@ class Site extends Base
     /**
      * 关闭SSL配置
      * 
-     * 本函数用于关闭指定站点的SSL加密配置.通过向服务端发送HTTP POST请求来实现
-     * 如果操作成功,将返回相关数据,否则将返回错误信息
+     * 本函数用于关闭指定站点的SSL加密配置
+     * 通过向服务端发送HTTP POST请求来实现,如果操作成功,将返回相关数据,否则将返回错误信息
      * 
      * @param int $updateOf 修改操作的标识,用于指示具体的修改行为
      * @param string $siteName 站点的名称,不包含协议部分,如"http://"
@@ -1138,7 +1139,7 @@ class Site extends Base
      * 通过HTTP POST请求向指定URL发送数据,以获取特定网站的流量限制信息
      * 此函数主要用于与外部服务进行通信,获取关于网站流量限制的详细数据
      * 
-     * @param int $id 网站的唯一标识ID,用于指定要查询的网站.
+     * @param int $id 网站的唯一标识ID,用于指定要查询的网站
      * @return mixed|array|bool 返回值可以是多种类型：成功时返回一个包含流量限制信息的数组
      *                          失败时,返回一个包含错误信息的数组;在发生异常时,返回false
      */

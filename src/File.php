@@ -23,7 +23,7 @@ class File extends Base
      * 
      * 本函数负责将本地文件上传到服务器指定路径
      * 它首先构造文件相关信息的数组,然后使用HTTP POST方法提交文件
-     * 如果上传成功,将返回上传结果；如果上传失败,则返回错误信息
+     * 如果上传成功,将返回上传结果;如果上传失败,则返回错误信息
      * 
      * @param string $uploadPath 上传文件的目标路径
      * @param string $localFilePath 本地文件的路径

@@ -10,11 +10,11 @@ class Plugin extends Base
 {
     protected $config = [
         // 获取一键部署列表
-        'Deployment'    => '/deployment?action=GetList',
+        'Deployment' => '/deployment?action=GetList',
         // 一键部署执行
-        'SetupPackage'  => '/plugin?action=a&name=deployment&s=SetupPackage',
+        'SetupPackage' => '/plugin?action=a&name=deployment&s=SetupPackage',
         // 获取部署进度
-        'GetSpeed'      => '/deployment?action=GetSpeed',
+        'GetSpeed' => '/deployment?action=GetSpeed',
     ];
 
     /**

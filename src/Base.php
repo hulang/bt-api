@@ -46,7 +46,6 @@ class Base
     {
         // 设置后台管理面板的URL
         $this->btPanel = $host;
-
         // 返回当前对象,支持链式调用
         return $this;
     }

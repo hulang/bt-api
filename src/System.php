@@ -15,17 +15,17 @@ class System extends Base
      */
     protected $config = [
         // 获取系统基础统计
-        'GetSystemTotal'    => '/system?action=GetSystemTotal',
+        'GetSystemTotal' => '/system?action=GetSystemTotal',
         // 获取磁盘分区信息
-        'GetDiskInfo'       => '/system?action=GetDiskInfo',
+        'GetDiskInfo' => '/system?action=GetDiskInfo',
         // 获取实时状态信息(CPU、内存、网络、负载)
-        'GetNetWork'        => '/ajax?action=GetTaskCount',
+        'GetNetWork' => '/ajax?action=GetTaskCount',
         // 检查是否有安装任务
-        'GetTaskCount'      => '/ajax?action=GetTaskCount',
+        'GetTaskCount' => '/ajax?action=GetTaskCount',
         // 检查面板更新
-        'UpdatePanel'       => '/ajax?action=UpdatePanel',
+        'UpdatePanel' => '/ajax?action=UpdatePanel',
         // 获取全局配置
-        'GetConfig'         => '/config?action=get_config',
+        'GetConfig' => '/config?action=get_config',
     ];
 
     /**
@@ -36,8 +36,8 @@ class System extends Base
      * 
      * @return mixed|array|bool
      * 返回值说明：
-     * - 成功时返回一个包含系统统计信息的数组;
-     * - 失败时返回false;
+     * - 成功时返回一个包含系统统计信息的数组
+     * - 失败时返回false
      * - 在发生异常时,返回一个包含错误信息的数组
      */
     public function getSystemTotal()
@@ -57,8 +57,8 @@ class System extends Base
      * 通过发送HTTP POST请求,并携带cookie,来获取服务器端的磁盘分区信息
      * 此方法封装了请求的过程,对外提供了一个简洁的接口
      * 
-     * @return mixed|array|bool 返回值可以是多种类型：
-     * - 如果请求成功,返回一个包含磁盘信息的数组;
+     * @return mixed|array|bool 返回值可以是多种类型
+     * - 如果请求成功,返回一个包含磁盘信息的数组
      * - 如果发生异常,返回false,并通过error方法输出错误信息
      */
     public function getDiskInfo()
@@ -99,8 +99,8 @@ class System extends Base
      * 具体请求的URL由getUrl('GetConfig')方法生成.如果请求成功,则返回获取到的配置信息;如果请求失败,则返回错误信息
      * 
      * @return mixed|array|bool 返回配置信息,可能是一个数组或者布尔值
-     *                          如果请求成功,返回配置信息数组;
-     *                          如果请求失败,返回false;
+     *                          如果请求成功,返回配置信息数组
+     *                          如果请求失败,返回false
      *                          如果发生异常,返回错误信息
      */
     public function GetConfig()
